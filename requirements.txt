@@ -1,0 +1,9 @@
+  pip install django
+ 
+
+
+ part 79
+
+
+
+ 
