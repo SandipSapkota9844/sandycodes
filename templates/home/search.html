@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %}Search Results{% endblock title %}
+{% block blogactive %}active{% endblock blogactive %}active
+{% block body %}
+
+
+<div class="container">
+
+    {% if allPosts|length < 1 %}
+   <p>No search results</p>
+    Your search query : <b>{{query}}</b> did not match any documents. <br>
+    Suggestions:
+    <ul>
+    <li>Make sure that all words are spelled correctly.</li>
+    <li>Try more general keywords.</li>
+   <li> Try fewer keywords.</li>
+   <li> Try different keywords.</li>
+    </li>
+    </ul>
+    {% endif %}
+  <div class="row  mt-3 mb-5">
+    
+    {% for post in allPosts  %}
+    <div class="col-lg-4 col-sm-6 mb-4 hover-animate">
+      <div class="card shadow border-0 h-100">
+        <a href="/blog/blogPost">
+          <img class="img-fluid card-img-top" src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="..."/></a>
+        <div class="card-body"><p class="text-uppercase text-muted text-sm letter-spacing-2" >
+          {{post.author}} </p>
+          <h5 class="my-2 text-dark">
+           {{post.title}}          </h5>
+          <p class="text-gray-500 text-sm my-3"><i class="far fa-clock mr-2"></i>
+            {{post.timeStamp}}</p>
+           <p class="my-2 text-muted text-sm">
+            {{post.content|truncatechars:100}}
+          </p>
+      
+          
+         
+          <a href="/blog/{{post.slug}}" class="btn pl-0 btn-danger ">Read More</a> 
+        </div>
+      </div>
+    </div>
+ 
+    {% endfor %}
+  
+  
+  </div>
+
+
+
+
+
+
+{% endblock body%}
