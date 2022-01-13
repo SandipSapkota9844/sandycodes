@@ -62,13 +62,12 @@
         </div>
     </nav>
 
-    {% for message in messages  %}            
-    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-          {{ message }}
-        
-    {% endfor %}   
-    
-    
+  {% for message in messages  %}
+    <div class="alert alert-{{message.tags}}warning alert-dismissible fade show" role="alert">
+      <strong>Message: </strong> {{message}}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}  
     
   <!-- SignUp Modal -->
 {% comment %} <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModal" aria-hidden="true">
@@ -131,27 +130,27 @@
             <form action= "/signup" method='post'>
                 <div class="form-group">
                   <label for="username">Username</label>
-                  <input type="text" class="form-control" id="username" name="username" placeholder="Choose a unique username">
+                  <input type="text"  required class="form-control" id="username" name="username" placeholder="Choose a unique username">
                 </div>
                 <div class="form-group">
                   <label for="fname">First Name</label>
-                  <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter Your First Name">
+                  <input type="text"required class="form-control" id="fname" name="fname" placeholder="Enter Your First Name">
                 </div>
                 <div class="form-group">
                   <label for="lname">Last Name</label>
-                  <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter Your Last Name">
+                  <input type="text"required class="form-control" id="lname" name="lname" placeholder="Enter Your Last Name">
                 </div>
                 <div class="form-group">
                   <label for="email">Email address</label>
-                  <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+                  <input type="email"required class="form-control" id="email" name="email" placeholder="name@example.com">
                 </div>
                 <div class="form-group">
                   <label for="pass1">Choose a password</label>
-                  <input type="password" class="form-control" id="pass1" name="pass1" placeholder="Choose Your Password">
+                  <input type="password"required class="form-control" id="pass1" name="pass1" placeholder="Choose Your Password">
                 </div>
                 <div class="form-group">
                   <label for="pass2">Confirm Password</label>
-                  <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Enter your password again">
+                  <input type="password"required class="form-control" id="pass2" name="pass2" placeholder="Enter your password again">
                 </div>
                
               
@@ -202,6 +201,9 @@
               </div>
             </div>
           </div>
+
+           
+          
 
    <footer class="bg-dark p-3 mt-5">
         <p class="text-center text-white">All Rights Reserved &copy 2022</p>

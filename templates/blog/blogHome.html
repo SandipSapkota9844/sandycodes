@@ -19,7 +19,7 @@
           <p class="text-gray-500 text-sm my-3"><i class="far fa-clock mr-2"></i>
             {{post.timeStamp}}</p>
            <p class="my-2 text-muted text-sm">
-            {{post.content|truncatechars:100}}
+            {{post.content |safe |truncatechars:100}}
           </p>
       
           

@@ -1,5 +1,5 @@
 from django.db import models
-
+from ckeditor.fields import RichTextField
 from django.db import models
 
 class Post(models.Model):
@@ -8,7 +8,8 @@ class Post(models.Model):
     author=models.CharField(max_length=14)
     slug=models.CharField(max_length=130)
     timeStamp=models.DateTimeField(blank=True)
-    content=models.TextField()
+    #content=models.TextField()
+    content=RichTextField(blank=True , null=True)
 
     def __str__(self):
         return self.title + " by " + self.author
