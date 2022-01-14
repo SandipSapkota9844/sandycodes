@@ -88,7 +88,7 @@ def handeLogin(request):
     if request.method == "POST":
         # Get the post parameters
         loginusername = request.POST['loginusername']
-        loginpassword = request.POST['loginpassword']
+        loginpassword = request.POST['loginpass']
 
         user = authenticate(username=loginusername, password=loginpassword)
         if user is not None:

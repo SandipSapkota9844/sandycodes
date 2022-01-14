@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 admin.site.site_header="SandyCodes Admin"
 admin.site.site_title="SandyCodes Admin"
+admin.site.index_title="Admin Panel"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),

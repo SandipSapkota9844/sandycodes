@@ -13,6 +13,7 @@ import os
 from django.contrib.messages import constants as messages
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -32,7 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'jazzmin',
+   # 'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     "home.apps.HomeConfig",
     'blog.apps.BlogConfig',
     'ckeditor',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +133,21 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MESSAGE_TAGS = {
     messages.ERROR:'danger'
 }
+
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,  "static"),
+]
+
+
+
+# JAZZMIN_UI_TWEAKS = {
+#     'navbar_brand': 'Sandip',
+#     "theme": "flatly",
+#     "dark_mode_theme": "darkly",
+# }
+# JAZZMIN_SETTINGS={
+#     "show_ui_builder" : True,
+# }
