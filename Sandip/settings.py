@@ -40,10 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     "home.apps.HomeConfig",
     'blog.apps.BlogConfig',
     'ckeditor',
-    'django.contrib.humanize',
+    
 ]
 
 MIDDLEWARE = [
