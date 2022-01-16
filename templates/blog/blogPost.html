@@ -12,19 +12,19 @@
 <div class="container">
     <h2> Comments ({{comments.count}})</h2>
     <div class="my-2">
-    {% if user.is_authenticated %}
-    <form action="/blog/postComment" method="post">
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="exampleInputEmail1">Post Comment </label>
-            <input type="text" class="form-control" name="comment" placeholder="Enter comment here">
-        </div>
-        <input type="hidden" name="parentSno" value="">
-        <button type="submit" class="btn btn-outline-primary mt-2">Submit</button>
-    </form>
-    {% else %}
-    Please login to post a comment 
-    {% endif %}
+        {% if user.is_authenticated %}
+        <form action="/blog/postComment" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="exampleInputEmail1">Post Comment </label>
+                <input type="text" class="form-control" name="comment" placeholder="Enter comment here">
+            </div>
+            <input type="hidden" name="postSno" value="{{post.sno}}">
+            <button type="submit" class="btn btn-primary mt-2">Submit</button>
+        </form>
+        {% else %}
+        Please login to post a comment 
+        {% endif %}
     
     
     </div>
